@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/background_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Consumo de Combustível"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/carro"
+        />
+
+    <EditText
+        android:id="@+id/editKm"
+        android:hint=" Km rodados"
+        android:inputType="numberDecimal"
+        android:background="@android:color/background_light"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/editLitros"
+        android:hint="Litros abastecidos"
+        android:inputType="numberDecimal"
+        android:background="@android:color/background_light"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        android:elevation="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:text="Calcular Consumo"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
