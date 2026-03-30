@@ -61,6 +61,7 @@
 
     <TextView
         android:id="@+id/txtResultado"
+        android:text="O resultado aparecerá aqui!"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@android:color/holo_red_dark"

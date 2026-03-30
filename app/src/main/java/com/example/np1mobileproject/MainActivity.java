@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declarando as variáveis, colocando nome nelas
     EditText km, litros;
     Button calcular;
     TextView resultado;
@@ -43,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
             double KmNumero = Double.parseDouble(KmRodados);
             double litrosNumero = Double.parseDouble(litrosAbastecidos);
 
-            /*if (litrosNumero == 0) {
+            if (litrosNumero <= 0) {
                 resultado.setText("Erro: Litros não pode ser igual a 0!");
                 return;
-            }*/
+            }
 
             double consumo = KmNumero / litrosNumero;
 
