@@ -8,6 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Título do aplicativo -->
     <TextView
         android:text="Consumo de Combustível"
         android:textSize="26sp"
@@ -18,12 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!--Imagem (carro) -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/carro"
         />
 
+    <!--Campo para inserir os km rodados -->
     <EditText
         android:id="@+id/editKm"
         android:hint=" Km rodados"
@@ -36,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-
+    <!--Campo para inserir os litros abastecidos -->
     <EditText
         android:id="@+id/editLitros"
         android:hint="Litros abastecidos"
@@ -49,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!--Botão que realiza o cálculo -->
     <Button
         android:id="@+id/btnCalcular"
         android:text="Calcular Consumo"
@@ -60,6 +64,7 @@
         android:layout_height="wrap_content"
         />
 
+    <!--Texto onde o resultado sera exibido-->
     <TextView
         android:id="@+id/txtResultado"
         android:text="O resultado aparecerá aqui!"

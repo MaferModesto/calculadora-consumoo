@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-    //Fazendo a conexão com o xml, por meio do Id
+    //Fazendo a conexão entre os componentes do XML e o JAVA, por meio do id
         km = findViewById(R.id.editKm);
         litros = findViewById(R.id.editLitros);
         calcular = findViewById(R.id.btnCalcular);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //método quando o usuário clica no botão
         calcular.setOnClickListener( v -> {
 
-            //transformando o texto em String
+            //recebe os valores digitados e converte para String
             String KmRodados = km.getText().toString();
             String litrosAbastecidos = litros.getText().toString();
 
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            //transformando a String em números decimais
+            //convertendo String para números (double)
             double KmNumero = Double.parseDouble(KmRodados);
             double litrosNumero = Double.parseDouble(litrosAbastecidos);
 
-            //Se o EditText estiver com 0 ou número negativo, retorna a msg de erro
+            //Se o EditText (litros) estiver com 0 ou número negativo, retorna a msg de erro
             if (litrosNumero <= 0) {
                 resultado.setText("Erro: Litros não pode ser igual a 0!");
                 return;
