@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
             double KmNumero = Double.parseDouble(KmRodados);
             double litrosNumero = Double.parseDouble(litrosAbastecidos);
 
-            if (litrosNumero <= 0) {
-                resultado.setText("Erro: Litros não pode ser igual a 0!");
+            if (KmNumero <= 0 || litrosNumero <= 0) {
+                resultado.setText("Erro: os valores devem ser maiores que 0!");
                 return;
             }
 
