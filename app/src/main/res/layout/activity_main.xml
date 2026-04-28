@@ -35,6 +35,12 @@
         android:src="@drawable/carro"
         />
 
+    <Spinner
+        android:id="@+id/id_do_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
     <EditText
         android:id="@+id/editKm"
         android:hint=" Km rodados"

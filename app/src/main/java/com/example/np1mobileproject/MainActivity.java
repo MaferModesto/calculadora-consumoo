@@ -1,8 +1,10 @@
 package com.example.np1mobileproject;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button calcular;
     TextView resultado;
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,22 @@ public class MainActivity extends AppCompatActivity {
         litros = findViewById(R.id.editLitros);
         calcular = findViewById(R.id.btnCalcular);
         resultado = findViewById(R.id.txtResultado);
+        spinner = findViewById(R.id.id_do_spinner);
+
+        String[] combustiveis = {
+          "Gasolina",
+          "Diesel",
+          "Etanol",
+        };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+                combustiveis
+        );
+
+        spinner.setAdapter(adapter);
+
 
         calcular.setOnClickListener( v -> {
 
@@ -48,7 +68,25 @@ public class MainActivity extends AppCompatActivity {
 
             double consumo = KmNumero / litrosNumero;
 
-            resultado.setText("Consumo: " + consumo + " km/L");
+            String tipoDeCombustivel = spinner.getSelectedItem().toString();
+            double preco = 0;
+
+            if (tipoDeCombustivel.equals("Gasolina")) {
+                preco = 6.66;
+            } else if (tipoDeCombustivel.equals("Diesel")) {
+                preco = 7.10;
+            } else if (tipoDeCombustivel.equals("Etanol")) {
+                preco = 4.20;
+            }
+
+            double custoPorKm = preco / consumo;
+
+            resultado.setText(
+                    "Combustível: " + tipoDeCombustivel +
+                            "\nConsumo: " + consumo + " km/L" +
+                            "\nPreço: R$ " + preco +
+                            "\nCusto por km: R$ " + custoPorKm
+            );
 
         });
     }
