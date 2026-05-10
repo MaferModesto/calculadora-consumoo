@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             String registro =
                     "Combustível: " + tipoDeCombustivel +
                             " | Consumo: " + consumo + " km/L" +
+                            "| Preço: " + preco + "R$" +
                             " | Custo/km: R$ " + custoPorKm + "\n";
 
             String historicoAntigo = sharedPref.getString("dados", "");
