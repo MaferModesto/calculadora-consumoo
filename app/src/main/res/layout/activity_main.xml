@@ -12,7 +12,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- TÍTULO -->
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +25,6 @@
             android:padding="12dp"
             android:layout_marginTop="10dp"/>
 
-        <!-- SUBTÍTULO -->
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +37,6 @@
             android:layout_marginTop="18dp"
             android:layout_marginBottom="20dp"/>
 
-        <!-- IMAGEM -->
 
         <ImageView
             android:layout_width="match_parent"
@@ -48,7 +45,6 @@
             android:scaleType="fitCenter"
             android:layout_marginBottom="16dp"/>
 
-        <!-- SPINNER -->
 
         <Spinner
             android:id="@+id/id_do_spinner"
@@ -57,8 +53,6 @@
             android:background="#FFFFFF"
             android:padding="8dp"
             android:layout_marginBottom="16dp"/>
-
-        <!-- KM -->
 
         <EditText
             android:id="@+id/editKm"
@@ -86,7 +80,6 @@
             android:elevation="2dp"
             android:layout_marginBottom="20dp"/>
 
-        <!-- BOTÃO CALCULAR -->
 
         <Button
             android:id="@+id/btnCalcular"
@@ -99,7 +92,6 @@
             android:backgroundTint="#F5B52E"
             android:layout_marginBottom="20dp"/>
 
-        <!-- RESULTADO -->
 
         <TextView
             android:id="@+id/txtResultado"
@@ -115,7 +107,6 @@
             android:elevation="2dp"
             android:layout_marginBottom="12dp"/>
 
-        <!-- HISTÓRICO -->
 
         <Button
             android:id="@+id/btnHistorico"

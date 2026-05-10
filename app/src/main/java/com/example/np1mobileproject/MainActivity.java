@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         calcular = findViewById(R.id.btnCalcular);
         resultado = findViewById(R.id.txtResultado);
         historico = findViewById(R.id.btnHistorico);
-        Spinner spinner = findViewById(R.id.id_do_spinner);
+        spinner = findViewById(R.id.id_do_spinner);
 
         historico.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                             "\nPreço: R$ " + preco +
                             "\nCusto por km: R$ " + custoPorKm
             );
+
             SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
 
@@ -101,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
             String historicoAntigo = sharedPref.getString("dados", "");
             editor.putString("dados", historicoAntigo + registro);
             editor.apply();
+
+            km.setText("");
+            litros.setText("");
 
         });
     }
