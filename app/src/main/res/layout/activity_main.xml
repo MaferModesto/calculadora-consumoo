@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--
+Tela responsável pela exibição do histórico de cálculos.
+Utilizamos ScrollView para permitir rolagem dos cards.
+-->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

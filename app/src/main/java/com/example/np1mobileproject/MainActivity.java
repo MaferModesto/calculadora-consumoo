@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     Button calcular;
     TextView resultado;
     Spinner spinner;
-
     Button historico;
 
     @Override
@@ -35,16 +34,19 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.id_do_spinner);
 
         historico.setOnClickListener(v -> {
+            //Abrir nova tela
             Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
             startActivity(intent);
         });
 
+        //Lista para seleção do tipo de combustível
         String[] combustiveis = {
           "Gasolina",
           "Diesel",
           "Etanol",
         };
 
+        //ArrayAdapter pega a lista e transforma em itens visuais do Spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_dropdown_item,
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
 
-
+        //Botão para executar o cálculo principal
         calcular.setOnClickListener( v -> {
 
             String KmRodados = km.getText().toString();
@@ -74,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
             double consumo = KmNumero / litrosNumero;
 
+            //Pega o tipo de combustível selecionado
             String tipoDeCombustivel = spinner.getSelectedItem().toString();
+            //Inicializa o preço
             double preco = 0;
 
             if (tipoDeCombustivel.equals("Gasolina")) {preco = 6.66;}
@@ -90,19 +94,27 @@ public class MainActivity extends AppCompatActivity {
                             "\nCusto por km: R$ " + custoPorKm
             );
 
+            //SharedPreferences utilizado para salvar o histórico
+            //Referência utilizada: https://developer.android.com/training/data-storage/shared-preferences?hl=pt-br#java
+            //Cria e acessa um armazenamento externo
             SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
+            //Permite editar os dados salvos
             SharedPreferences.Editor editor = sharedPref.edit();
 
-            String registro =
+            String resposta =
                     "Combustível: " + tipoDeCombustivel +
                             " | Consumo: " + consumo + " km/L" +
                             "| Preço: " + preco + "R$" +
                             " | Custo/km: R$ " + custoPorKm + "\n";
 
+            //Busca o histórico salvo
             String historicoAntigo = sharedPref.getString("dados", "");
-            editor.putString("dados", historicoAntigo + registro);
+            //Salva um novo histórico
+            editor.putString("dados", historicoAntigo + resposta);
+            //Salva os dados
             editor.apply();
 
+            //Limpando campos
             km.setText("");
             litros.setText("");
 

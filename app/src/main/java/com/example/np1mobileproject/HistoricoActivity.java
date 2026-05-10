@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class HistoricoActivity extends AppCompatActivity {
 
+    //Container dos cards
     LinearLayout container;
 
     @Override
@@ -22,6 +23,9 @@ public class HistoricoActivity extends AppCompatActivity {
 
         Button btnVoltar = findViewById(R.id.btnVoltar);
         Button btnLimpar = findViewById(R.id.btnLimpar);
+
+        //Botão que apaga todos os dados do histórico
+        //Método clear() remove todas as informações armazenadas
 
         btnLimpar.setOnClickListener(v -> {
 
@@ -35,17 +39,27 @@ public class HistoricoActivity extends AppCompatActivity {
 
             container.removeAllViews();
 
+            //Recarrega a Activity para atualizar a tela depois de limpar
             recreate();
         });
         btnVoltar.setOnClickListener(v -> finish());
 
+        // Abre os dados salvos utilizando SharedPreferences.
         SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
+        //Pega o histórico armazenado
         String dados = sharedPref.getString("dados", "");
 
+        //Verifica se tem histórico, se sim
         if (!dados.isEmpty()) {
-            String[] registros = dados.split("\n");
+            //Divide as respostas salvas por linha
+            String[] respostas = dados.split("\n");
 
-            for (String r : registros) {
+            //Percorre todas as respostas
+            for (String r : respostas) {
+
+                //Criação de cards baseada em exemplos de LayoutInflater
+                //Referência: https://developer.android.com/reference/android/view/LayoutInflater
+                //Cria um card baseado no XML
 
                 View card = getLayoutInflater()
                         .inflate(R.layout.card_historico, container, false);
@@ -55,22 +69,18 @@ public class HistoricoActivity extends AppCompatActivity {
                 TextView preco = card.findViewById(R.id.txtPreco);
                 TextView custo = card.findViewById(R.id.txtCusto);
 
+                //Divide os dados da resposta
                 String[] partes = r.split("\\|");
 
+                //Mostra os dados na tela
                 combustivel.setText(partes[0]);
                 consumo.setText(partes[1]);
                 custo.setText(partes[2]);
                 preco.setText(partes[3]);
 
+                //Insere o card dentro do container(LinearLayout)
                 container.addView(card);
             }
         }
-    }
-
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
     }
 }
