@@ -13,6 +13,8 @@ public class HistoricoActivity extends AppCompatActivity {
 
     //Container dos cards
     LinearLayout container;
+    Button btnVoltar;
+    Button btnLimpar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,18 +22,15 @@ public class HistoricoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historico);
 
         container = findViewById(R.id.containerHistorico);
-
-        Button btnVoltar = findViewById(R.id.btnVoltar);
-        Button btnLimpar = findViewById(R.id.btnLimpar);
+        btnVoltar = findViewById(R.id.btnVoltar);
+        btnLimpar = findViewById(R.id.btnLimpar);
 
         //Botão que apaga todos os dados do histórico
         //Método clear() remove todas as informações armazenadas
 
         btnLimpar.setOnClickListener(v -> {
 
-            SharedPreferences sharedPref =
-                    getSharedPreferences("historico", MODE_PRIVATE);
-
+            SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
 
             editor.clear();
@@ -42,14 +41,15 @@ public class HistoricoActivity extends AppCompatActivity {
             //Recarrega a Activity para atualizar a tela depois de limpar
             recreate();
         });
+
         btnVoltar.setOnClickListener(v -> finish());
 
         // Abre os dados salvos utilizando SharedPreferences.
         SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
-        //Pega o histórico armazenado
+        //Pega o histórico armazenado em formato de texto
         String dados = sharedPref.getString("dados", "");
 
-        //Verifica se tem histórico, se sim
+        //Verifica se tem histórico salvo, se sim
         if (!dados.isEmpty()) {
             //Divide as respostas salvas por linha
             String[] respostas = dados.split("\n");

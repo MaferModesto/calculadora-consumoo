@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-Tela responsável pela exibição do histórico de cálculos.
-Utilizamos ScrollView para permitir rolagem dos cards.
--->
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F8F8">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
-
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
         <TextView
             android:layout_width="match_parent"
@@ -70,7 +58,6 @@ Utilizamos ScrollView para permitir rolagem dos cards.
             android:elevation="2dp"
             android:layout_marginBottom="16dp"/>
 
-        <!-- LITROS -->
 
         <EditText
             android:id="@+id/editLitros"
@@ -124,5 +111,3 @@ Utilizamos ScrollView para permitir rolagem dos cards.
 
 
     </LinearLayout>
-
-</ScrollView>

@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //Lista para seleção do tipo de combustível
+        //Array para seleção do tipo de combustível
         String[] combustiveis = {
           "Gasolina",
           "Diesel",
           "Etanol",
         };
 
-        //ArrayAdapter pega a lista e transforma em itens visuais do Spinner
+        //ArrayAdapter pega a array e transforma em itens visuais do Spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_dropdown_item,
