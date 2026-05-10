@@ -1,19 +1,31 @@
-**EcoDrive**
-Este projeto foi desenvolvido como uma atividade acadêmica para o curso bacharelado Sistemas de Informação da UNIP. O sistema consiste em um aplicativo mobile voltado para o cálculo de consumo de combustível e registro de histórico de consultas, com foco na prática de conceitos de desenvolvimento Android e manipulação de dados locais.
+# CALCULADORA DE CONSUMO DE COMBUSTÍVEL "EcoDrive"
 
-**Principais responsabilidades:**
-Interface e Experiência do Usuário: Criação das telas utilizando XML, com foco em usabilidade, organização dos componentes e navegação entre Activities.
-Lógica de Cálculo: Implementação da funcionalidade de cálculo de consumo de combustível com base nos dados inseridos pelo usuário (quilometragem e litros abastecidos).
-Seleção de Dados: Utilização de Spinner para permitir a escolha do tipo de combustível, tornando a interação mais dinâmica e intuitiva.
-Armazenamento Local de Dados: Utilização de SharedPreferences para salvar e recuperar o histórico de cálculos realizados pelo usuário.
-Exibição Dinâmica de Dados: Construção do histórico em formato de cards utilizando LayoutInflater, permitindo a criação dinâmica de componentes na tela.
-Gestão do Histórico: Implementação da funcionalidade de limpeza de dados salvos e atualização da interface em tempo real.
+## Descrição do Projeto
 
-**Tecnologias Utilizadas:**
+Este projeto foi desenvolvido como uma avaliação prática para o curso bacharelado Sistemas de Informação da UNIP. O sistema consiste em uma aplicação mobile voltada para o cálculo de consumo de combustível e registro de histórico de consultas.
 
-Java
-Android Studio
-SharedPreferences
-XML (Layouts Android)
-Componentes UI
-LayoutInflater
+O objetivo principal do sistema é permitir que o usuário calcule o consumo médio do veículo com base na quilometragem percorrida e na quantidade de combustível abastecido, além de armazenar e visualizar o histórico dessas consultas de forma organizada.
+
+---
+
+## Tecnologias Utilizadas
+
+- Java: Linguagem de programação principal para o desenvolvimento do aplicativo.
+- Android Studio: Ambiente de desenvolvimento utilizado.
+- XML: Utilizado na construção das interfaces do aplicativo.
+- SharedPreferences: Responsável pelo armazenamento local dos dados do histórico.
+- LayoutInflater: Utilizado para criação dinâmica de componentes na interface.
+- Componentes Android: Spinner, Button, TextView e LinearLayout.
+
+---
+
+## Funcionalidades
+
+- Cálculo de Consumo: Permite calcular o consumo médio do veículo com base nos dados informados pelo usuário.
+- Seleção de Combustível: Utilização de Spinner para escolha do tipo de combustível.
+- Armazenamento de Histórico: Salvamento local dos cálculos realizados utilizando SharedPreferences.
+- Exibição de Histórico: Listagem dos registros em formato de cards dinâmicos.
+- Limpeza de Histórico: Permite remover todos os dados salvos pelo usuário.
+- Navegação entre Telas: Sistema com múltiplas Activities para organização das funcionalidades.
+
+
