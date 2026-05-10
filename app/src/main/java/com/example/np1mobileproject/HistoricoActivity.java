@@ -21,6 +21,22 @@ public class HistoricoActivity extends AppCompatActivity {
         container = findViewById(R.id.containerHistorico);
 
         Button btnVoltar = findViewById(R.id.btnVoltar);
+        Button btnLimpar = findViewById(R.id.btnLimpar);
+
+        btnLimpar.setOnClickListener(v -> {
+
+            SharedPreferences sharedPref =
+                    getSharedPreferences("historico", MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+
+            editor.clear();
+            editor.apply();
+
+            container.removeAllViews();
+
+            recreate();
+        });
         btnVoltar.setOnClickListener(v -> finish());
 
         SharedPreferences sharedPref = getSharedPreferences("historico", MODE_PRIVATE);
@@ -44,8 +60,7 @@ public class HistoricoActivity extends AppCompatActivity {
                 combustivel.setText(partes[0]);
                 consumo.setText(partes[1]);
                 custo.setText(partes[2]);
-
-                preco.setText("Preço: ---");
+                preco.setText(partes[3]);
 
                 container.addView(card);
             }
