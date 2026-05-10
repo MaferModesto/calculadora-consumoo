@@ -35,14 +35,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnHistorico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Histórico"
-            android:backgroundTint="@android:color/holo_orange_light"
-            android:layout_marginEnd="16dp" />
-
 
         <ImageView
             android:layout_width="match_parent"
@@ -101,6 +93,15 @@
             android:layout_height="wrap_content"/>
 
 
+        <Button
+            android:id="@+id/btnHistorico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver histórico"
+            android:textColor="#F5B52E"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
 
 
     </LinearLayout>

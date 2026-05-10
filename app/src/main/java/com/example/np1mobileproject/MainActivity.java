@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         litros = findViewById(R.id.editLitros);
         calcular = findViewById(R.id.btnCalcular);
         resultado = findViewById(R.id.txtResultado);
+        historico = findViewById(R.id.btnHistorico);
         Spinner spinner = findViewById(R.id.id_do_spinner);
 
         historico.setOnClickListener(v -> {
